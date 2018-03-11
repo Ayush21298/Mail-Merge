@@ -1,5 +1,6 @@
 # Python code to illustrate Sending mail from 
 # your Gmail account 
+import getpass
 import smtplib
  
 # creates SMTP session
@@ -9,13 +10,15 @@ s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls()
  
 # Authentication
-s.login("sender_email_id", "sender_email_id_password")
+gmail_addr = raw_input("Email account to send from: ")
+password = getpass.getpass("Enter your password (will not be stored): ")
+s.login(gmail_addr, password)
  
 # message to be sent
 message = "Message_you_need_to_send"
  
 # sending the mail
-s.sendmail("sender_email_id", "receiver_email_id", message)
+s.sendmail(gmail, "cs1160396@iitd.ac.in", message)
  
 # terminating the session
 s.quit()
