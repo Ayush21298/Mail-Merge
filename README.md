@@ -1,2 +1,2 @@
 # Mail-Merge
-Mail Merge for gamil
+Mail Merge for Gmail
