@@ -42,6 +42,13 @@ f = open(message_file, "r")
 message_text = ''.join(f.readlines())
 f.close()
 
+#Entry no. to email
+def entryToEmail(entry):
+    #2016CS10396
+    email=entry[4:7]+entry[2:4]+entry[7:11]+"@iitd.ac.in";
+    print email;
+    return email;
+
 #xls version
 if str(filename).endswith(".xls") or str(filename).endswith(".xlsx"):
     nicknames = []
@@ -54,6 +61,7 @@ if str(filename).endswith(".xls") or str(filename).endswith(".xlsx"):
     for row_number in xrange(1, sheet.nrows):
         nickname = sheet.cell_value(row_number, 0)
         email = sheet.cell_value(row_number, 1)
+        email = entryToEmail(email);
 
         if nickname and email and re.match(r"[^@]+@[^@]+\.[^@]+", email):
             nicknames.append(nickname)
