@@ -96,7 +96,7 @@ print "Starting Mail Merge..."
 
 counter = 0
 for email in emails:
-    GREETING = "%s,\n\n" % nicknames[counter]
+    GREETING = "Hello %s,\n\n" % nicknames[counter]
     mail(email,
     subject,
     GREETING+message_text,
