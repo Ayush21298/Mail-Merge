@@ -46,6 +46,7 @@ f.close()
 def entryToEmail(entry):
     #2016CS10396
     email=entry[4:7]+entry[2:4]+entry[7:11]+"@iitd.ac.in";
+    email = email.lower();
     print email
     return email
 
@@ -58,7 +59,7 @@ if str(filename).endswith(".xls") or str(filename).endswith(".xlsx"):
     sheet = book.sheet_by_index(0) 
 
     #check all the rows
-    for row_number in xrange(1, sheet.nrows):
+    for row_number in xrange(0, sheet.nrows):
         nickname = sheet.cell_value(row_number, 0)
         email = sheet.cell_value(row_number, 1)
         email = entryToEmail(email)

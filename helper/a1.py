@@ -6,6 +6,7 @@ import smtplib
 # creates SMTP session
 s = smtplib.SMTP('smtp.gmail.com', 587)
  
+s.ehlo();
 # start TLS for security
 s.starttls()
  
